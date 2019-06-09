@@ -1,0 +1,22 @@
+ 
+ _kernel int isprime(const int n, _global int *A)//for parallel operation global variable A is passed as arg.
+{
+    if(n<=1)
+        return (0);
+    i=2;
+    i=get_global_id(0);//we can use global id instead of for loop
+        if(n%i==0)
+            return (0);
+
+    return(1);
+}
+
+ _kernel int isprime(const int n, _global int *B)
+{
+    int j=2;
+    j=get_global_id(1);
+        if(isprime(i)==1)
+            cout<<i<<""<<endl;
+
+
+}
